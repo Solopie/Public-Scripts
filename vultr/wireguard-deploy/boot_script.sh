@@ -72,7 +72,7 @@ EOF
 
 # Move VPN config file into local user folder
 adduser --system --comment "VPN Key Retrieval" --home /home/$LOCAL_USERNAME --shell /bin/bash $LOCAL_USERNAME
-cp $CONFIG_FILE /home/$LOCAL_USERNAME/
+cp /etc/wireguard/$WG_CLIENT_CONFIG_FILE /home/$LOCAL_USERNAME/
 chown $LOCAL_USERNAME /home/$LOCAL_USERNAME/$WG_CLIENT_CONFIG_FILE
 
 # Write public key to local user for remote pulling of the wireguard client configuration
