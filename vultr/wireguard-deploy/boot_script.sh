@@ -85,8 +85,7 @@ wget -O /usr/local/bin/check_time_and_destroy.sh https://raw.githubusercontent.c
 chmod +x /usr/local/bin/check_time_and_destroy.sh
 wget -O /etc/systemd/system/check_time_and_destroy.service https://raw.githubusercontent.com/Solopie/Public-Scripts/refs/heads/main/vultr/wireguard-deploy/check_time_and_destroy.service
 sed -i "s|<VULTR_API_KEY>|$VULTR_API_KEY|g" /etc/systemd/system/check_time_and_destroy.service
-wget -O /etc/systemd/system/check_time_and_destroy.timer https://github.com/Solopie/Public-Scripts/blob/main/vultr/wireguard-deploy/check_time_and_destroy.timer
+wget -O /etc/systemd/system/check_time_and_destroy.timer https://raw.githubusercontent.com/Solopie/Public-Scripts/refs/heads/main/vultr/wireguard-deploy/check_time_and_destroy.timer
 systemctl daemon-reload
-systemctl enable check_time_and_destroy.service
-systemctl enable check_time_and_destroy.timer
+systemctl start check_time_and_destroy.timer
 
