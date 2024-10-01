@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Redacted variables that are expected to be in environment
+# Redacted variables that are expected to be in environment:
 # LOCAL_USERNAME=<REDACTED>
 # VULTR_API_KEY=<REDACTED>
 
@@ -10,7 +10,7 @@ TIME_LIMIT=$((30 * 60)) # 30 minutes in seconds
 
 # Check if the time file exists
 if [[ ! -f "$TIME_FILE" ]]; then
-    echo $(date +%s) >> $TIME_FILE
+    echo $(date +%s) > $TIME_FILE
     exit 0
 fi
 
