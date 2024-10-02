@@ -81,12 +81,12 @@ echo "$PEER_PUBLIC_KEY" >> /home/$LOCAL_USERNAME/.ssh/authorized_keys
 chown -R $LOCAL_USERNAME /home/$LOCAL_USERNAME/.ssh/
 
 # Write auto-destruction services
-wget -O /usr/local/bin/check_time_and_destroy.sh https://raw.githubusercontent.com/Solopie/Public-Scripts/refs/heads/main/vultr/wireguard-deploy/check_time_and_destroy.sh
+wget -O /usr/local/bin/check_time_and_destroy.sh https://raw.githubusercontent.com/Solopie/public-scripts/refs/heads/main/vultr/wireguard-deploy/check_time_and_destroy.sh
 chmod +x /usr/local/bin/check_time_and_destroy.sh
-wget -O /etc/systemd/system/check_time_and_destroy.service https://raw.githubusercontent.com/Solopie/Public-Scripts/refs/heads/main/vultr/wireguard-deploy/check_time_and_destroy.service
+wget -O /etc/systemd/system/check_time_and_destroy.service https://raw.githubusercontent.com/Solopie/public-scripts/refs/heads/main/vultr/wireguard-deploy/check_time_and_destroy.service
 sed -i "s|<VULTR_API_KEY>|$VULTR_API_KEY|g" /etc/systemd/system/check_time_and_destroy.service
 sed -i "s|<LOCAL_USERNAME>|$LOCAL_USERNAME|g" /etc/systemd/system/check_time_and_destroy.service
-wget -O /etc/systemd/system/check_time_and_destroy.timer https://raw.githubusercontent.com/Solopie/Public-Scripts/refs/heads/main/vultr/wireguard-deploy/check_time_and_destroy.timer
+wget -O /etc/systemd/system/check_time_and_destroy.timer https://raw.githubusercontent.com/Solopie/public-scripts/refs/heads/main/vultr/wireguard-deploy/check_time_and_destroy.timer
 systemctl daemon-reload
 systemctl start check_time_and_destroy.timer
 
