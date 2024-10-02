@@ -6,6 +6,7 @@ Wants=check_time_and_destroy.timer
 Type=oneshot
 ExecStart=/usr/local/bin/check_time_and_destroy.sh
 Environment="VULTR_API_KEY=<VULTR_API_KEY>"
+Environment="LOCAL_USERNAME=<LOCAL_USERNAME>"
 
 [Install]
 WantedBy=multi-user.target
